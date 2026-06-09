@@ -1,0 +1,266 @@
+# Neovim like VS Code
+
+Personal Neovim configuration focused on creating a fast, keyboard-driven and VS Code-like development environment.
+
+This setup is built step by step to keep the configuration readable, maintainable and easy to debug. The goal is not to create a huge prebuilt distribution, but to understand every part of the editor and gradually turn Neovim into a practical IDE.
+
+## Goals
+
+- Build a clean Neovim configuration in Lua
+- Recreate the most useful VS Code features
+- Keep the setup modular and easy to maintain
+- Use Neovim as a serious editor for development and QA-related work
+- Prepare the environment for working with AI coding agents such as Codex CLI
+
+## Current Features
+
+### Core
+
+- Lua-based configuration
+- Modular file structure
+- Custom keymaps
+- System clipboard support
+- Relative line numbers
+- Mouse support
+- Better splits and scrolling behavior
+
+### Plugin Manager
+
+- `lazy.nvim` for plugin management
+
+### UI
+
+- `catppuccin` colorscheme
+- `lualine.nvim` statusline
+- `bufferline.nvim` buffer tabs
+- `which-key.nvim` keybinding helper
+
+### File Navigation
+
+- `neo-tree.nvim` file explorer
+- `telescope.nvim` fuzzy finder
+- Fast file search
+- Project-wide text search
+- Buffer search
+- Command search
+- Help search
+
+### Syntax and Code Intelligence
+
+- `nvim-treesitter` for better syntax highlighting
+- Language Server Protocol support
+- `mason.nvim` for managing LSP servers
+- `mason-lspconfig.nvim`
+- `nvim-lspconfig`
+
+Configured LSP servers:
+
+- Lua
+- Bash
+- JSON
+- YAML
+- Python
+- TypeScript / JavaScript
+- HTML
+- CSS
+
+### Autocomplete
+
+- `nvim-cmp`
+- LSP completion
+- Buffer completion
+- Path completion
+- Snippet support with `LuaSnip`
+
+### Formatting
+
+- `conform.nvim`
+- Format on save
+- Manual formatting shortcut
+
+Configured formatters:
+
+- Lua: `stylua`
+- Bash: `shfmt`
+- Python: `black`
+- JavaScript / TypeScript / HTML / CSS / JSON / YAML / Markdown: `prettier`
+
+### Git
+
+- `gitsigns.nvim`
+- Git change indicators
+- Hunk preview
+- Hunk reset
+- Hunk staging
+- Line blame
+- File diff
+
+## Keybindings
+
+The leader key is set to `Space`.
+
+### General
+
+| Keybinding  | Action                 |
+| ----------- | ---------------------- |
+| `Space + w` | Save file              |
+| `Space + q` | Quit                   |
+| `Space + x` | Close current buffer   |
+| `Esc`       | Clear search highlight |
+
+### File Explorer
+
+| Keybinding  | Action               |
+| ----------- | -------------------- |
+| `Space + e` | Toggle file explorer |
+| `Space + o` | Open file explorer   |
+
+### Search
+
+| Keybinding      | Action                 |
+| --------------- | ---------------------- |
+| `Space + f + f` | Find files             |
+| `Space + f + g` | Search text in project |
+| `Space + f + b` | Find open buffers      |
+| `Space + f + h` | Search help            |
+| `Space + f + c` | Search commands        |
+
+### Splits
+
+| Keybinding      | Action               |
+| --------------- | -------------------- |
+| `Space + s + v` | Vertical split       |
+| `Space + s + h` | Horizontal split     |
+| `Space + h`     | Move to left window  |
+| `Space + j`     | Move to lower window |
+| `Space + k`     | Move to upper window |
+| `Space + l`     | Move to right window |
+
+### Buffers
+
+| Keybinding    | Action          |
+| ------------- | --------------- |
+| `Tab`         | Next buffer     |
+| `Shift + Tab` | Previous buffer |
+
+### LSP
+
+| Keybinding      | Action               |
+| --------------- | -------------------- |
+| `K`             | Hover documentation  |
+| `gd`            | Go to definition     |
+| `gD`            | Go to declaration    |
+| `gr`            | Go to references     |
+| `gi`            | Go to implementation |
+| `Space + r + n` | Rename symbol        |
+| `Space + c + a` | Code action          |
+| `Space + d`     | Show diagnostic      |
+| `[d`            | Previous diagnostic  |
+| `]d`            | Next diagnostic      |
+| `Space + l + f` | Format file          |
+
+### Git
+
+| Keybinding      | Action                |
+| --------------- | --------------------- |
+| `]g`            | Next Git hunk         |
+| `[g`            | Previous Git hunk     |
+| `Space + g + p` | Preview Git hunk      |
+| `Space + g + r` | Reset Git hunk        |
+| `Space + g + s` | Stage Git hunk        |
+| `Space + g + u` | Undo stage Git hunk   |
+| `Space + g + b` | Git blame line        |
+| `Space + g + B` | Toggle Git blame      |
+| `Space + g + d` | Git diff current file |
+
+## Project Structure
+
+```text
+~/.config/nvim/
+├── init.lua
+├── lua/
+│   └── paul/
+│       ├── core/
+│       │   ├── options.lua
+│       │   ├── keymaps.lua
+│       │   └── lsp.lua
+│       ├── config/
+│       │   └── lazy.lua
+│       └── plugins/
+│           ├── bufferline.lua
+│           ├── cmp.lua
+│           ├── colorscheme.lua
+│           ├── formatting.lua
+│           ├── gitsigns.lua
+│           ├── lsp.lua
+│           ├── lualine.lua
+│           ├── neo-tree.lua
+│           ├── telescope.lua
+│           ├── treesitter.lua
+│           └── which-key.lua
+└── README.md
+```
+
+## Requirements
+
+Recommended system packages on Arch / CachyOS:
+
+```bash
+sudo pacman -S --needed \
+  neovim \
+  git \
+  ripgrep \
+  fd \
+  nodejs \
+  npm \
+  python \
+  python-pip \
+  unzip \
+  curl \
+  base-devel \
+  gcc \
+  tree-sitter-cli \
+  stylua \
+  shfmt \
+  prettier \
+  python-black
+```
+
+## Installation
+
+Clone this repository into the Neovim configuration directory:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git ~/.config/nvim
+```
+
+Start Neovim:
+
+```bash
+nvim
+```
+
+Then run:
+
+```vim
+:Lazy sync
+```
+
+After plugin installation, restart Neovim.
+
+## Notes
+
+This configuration is still under active development.
+
+Planned additions:
+
+- integrated terminal workflow
+- debugging support
+- better Markdown support
+- test runner integration
+- Codex CLI workflow
+- QA-focused shortcuts and project templates
+
+## Purpose
+
+This repository is part of my personal learning and development workflow. It is designed to help me build a practical, transparent and maintainable Neovim setup instead of relying on a large prebuilt configuration that I do not fully understand.

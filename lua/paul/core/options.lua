@@ -22,3 +22,4 @@ vim.opt.splitbelow = true
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
+-- test gitsigns
