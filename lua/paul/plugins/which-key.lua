@@ -75,6 +75,9 @@ return {
 				{ "<leader>xq", desc = "Quickfix list" },
 				{ "<leader>xl", desc = "Location list" },
 				{ "<leader>xt", desc = "TODO/FIXME list" },
+
+				{ "<leader>m", group = "Markdown" },
+				{ "<leader>mp", desc = "Toggle Markdown render" },
 			})
 		end,
 	},
