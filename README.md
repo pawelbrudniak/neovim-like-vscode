@@ -392,17 +392,23 @@ to open the output of the selected test.
 - Terminal workflow prepared for Codex CLI usage
 - Quick terminal access without leaving Neovim
 
+### Sessions
+
+- `auto-session`
+- Automatic session save and restore per project directory
+- Manual session save, restore and delete
+- Restores previously opened files and window layout
+- Neo-tree is closed before saving sessions to avoid restoring file explorer buffers
+
 ## Keybindings
 
 The leader key is set to `Space`.
 
 ### General
 
-| Keybinding  | Action                 |
-| ----------- | ---------------------- |
-| `Space + w` | Save file              |
-| `Space + q` | Quit                   |
-| `Esc`       | Clear search highlight |
+| Keybinding | Action                 |
+| ---------- | ---------------------- |
+| `Esc`      | Clear search highlight |
 
 ### File Explorer
 
@@ -506,6 +512,14 @@ LazyGit keybindings:
 | `Space + g + g`         | Open LazyGit                  |
 | `Space + g + Shift + g` | Open LazyGit for current file |
 
+### Sessions
+
+| Keybinding      | Action          |
+| --------------- | --------------- |
+| `Space + s + s` | Save session    |
+| `Space + s + r` | Restore session |
+| `Space + s + d` | Delete session  |
+
 Terminal keybindings:
 
 | Keybinding      | Action                     |
@@ -529,6 +543,7 @@ Terminal keybindings:
 │       ├── config/
 │       │   └── lazy.lua
 │       └── plugins/
+│           ├── auto-session.lua
 │           ├── bufferline.lua
 │           ├── cmp.lua
 │           ├── colorscheme.lua
