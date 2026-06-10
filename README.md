@@ -64,6 +64,29 @@ Configured LSP servers:
 - HTML
 - CSS
 
+### Tool Management
+
+- `mason.nvim`
+- `mason-lspconfig.nvim`
+- `mason-tool-installer.nvim`
+
+Mason is used to manage LSP servers and external development tools such as formatters.
+
+Automatically managed tools include:
+
+- Lua Language Server
+- Bash Language Server
+- JSON LSP
+- YAML Language Server
+- Pyright
+- TypeScript Language Server
+- HTML LSP
+- CSS LSP
+- Stylua
+- Shfmt
+- Black
+- Prettier
+
 ### Autocomplete
 
 - `nvim-cmp`
@@ -212,6 +235,7 @@ Terminal keybindings:
 │           ├── gitsigns.lua
 │           ├── lsp.lua
 │           ├── lualine.lua
+│           ├── mason-tools.lua
 │           ├── neo-tree.lua
 │           ├── telescope.lua
 │           ├── terminal.lua
