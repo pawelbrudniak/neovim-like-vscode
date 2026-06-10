@@ -1,3 +1,5 @@
+local tools = require("paul.config.tools")
+
 return {
 	{
 		"mason-org/mason.nvim",
@@ -12,16 +14,7 @@ return {
 			"hrsh7th/cmp-nvim-lsp",
 		},
 		opts = {
-			ensure_installed = {
-				"lua_ls",
-				"bashls",
-				"jsonls",
-				"yamlls",
-				"pyright",
-				"ts_ls",
-				"html",
-				"cssls",
-			},
+			ensure_installed = tools.lsp_servers,
 			automatic_enable = true,
 		},
 	},

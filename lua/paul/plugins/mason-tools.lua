@@ -1,3 +1,6 @@
+local tools = require("paul.config.tools")
+local ensure_installed = vim.list_extend(vim.deepcopy(tools.lsp_servers), tools.mason_tools)
+
 return {
     {
         "WhoIsSethDaniel/mason-tool-installer.nvim",
@@ -5,23 +8,7 @@ return {
             "mason-org/mason.nvim",
         },
         opts = {
-            ensure_installed = {
-                -- LSP servers
-                "lua-language-server",
-                "bash-language-server",
-                "json-lsp",
-                "yaml-language-server",
-                "pyright",
-                "typescript-language-server",
-                "html-lsp",
-                "css-lsp",
-
-                -- Formatters
-                "stylua",
-                "shfmt",
-                "black",
-                "prettier",
-            },
+            ensure_installed = ensure_installed,
 
             auto_update = false,
             run_on_start = true,
