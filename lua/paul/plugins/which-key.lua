@@ -43,6 +43,8 @@ return {
 				{ "<leader>q", desc = "Quit" },
 				{ "<leader>x", desc = "Close buffer" },
 				{ "<leader>g", group = "Git" },
+				{ "<leader>gg", desc = "Open LazyGit" },
+				{ "<leader>gG", desc = "Open LazyGit current file" },
 				{ "<leader>gp", desc = "Preview Git hunk" },
 				{ "<leader>gr", desc = "Reset Git hunk" },
 				{ "<leader>gs", desc = "Stage Git hunk" },

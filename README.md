@@ -118,6 +118,20 @@ Configured formatters:
 - Line blame
 - File diff
 
+### Git UI
+
+- `lazygit.nvim`
+- LazyGit integration inside Neovim
+- Git status, diff, stage, commit, push and pull from a terminal UI
+- Quick access to repository changes without leaving the editor
+
+LazyGit keybindings:
+
+| Keybinding              | Action                        |
+| ----------------------- | ----------------------------- |
+| `Space + g + g`         | Open LazyGit                  |
+| `Space + g + Shift + g` | Open LazyGit for current file |
+
 ### Integrated Terminal
 
 - `toggleterm.nvim`
@@ -193,17 +207,19 @@ The leader key is set to `Space`.
 
 ### Git
 
-| Keybinding      | Action                |
-| --------------- | --------------------- |
-| `]g`            | Next Git hunk         |
-| `[g`            | Previous Git hunk     |
-| `Space + g + p` | Preview Git hunk      |
-| `Space + g + r` | Reset Git hunk        |
-| `Space + g + s` | Stage Git hunk        |
-| `Space + g + u` | Undo stage Git hunk   |
-| `Space + g + b` | Git blame line        |
-| `Space + g + B` | Toggle Git blame      |
-| `Space + g + d` | Git diff current file |
+| Keybinding              | Action                        |
+| ----------------------- | ----------------------------- |
+| `Space + g + g`         | Open LazyGit                  |
+| `Space + g + Shift + g` | Open LazyGit for current file |
+| `]g`                    | Next Git hunk                 |
+| `[g`                    | Previous Git hunk             |
+| `Space + g + p`         | Preview Git hunk              |
+| `Space + g + r`         | Reset Git hunk                |
+| `Space + g + s`         | Stage Git hunk                |
+| `Space + g + u`         | Undo stage Git hunk           |
+| `Space + g + b`         | Git blame line                |
+| `Space + g + B`         | Toggle Git blame              |
+| `Space + g + d`         | Git diff current file         |
 
 Terminal keybindings:
 
@@ -235,6 +251,7 @@ Terminal keybindings:
 │           ├── gitsigns.lua
 │           ├── lsp.lua
 │           ├── lualine.lua
+│           ├── lazygit.lua
 │           ├── mason-tools.lua
 │           ├── neo-tree.lua
 │           ├── telescope.lua
