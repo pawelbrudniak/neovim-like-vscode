@@ -189,7 +189,7 @@ nvim .
 Try the main features:
 
 ```text
-Space + e      open file explorer
+Space + e      toggle file explorer
 Space + f + f  find files
 Space + f + g  search text in project
 Space + x + d  document diagnostics
@@ -501,6 +501,8 @@ The leader key is set to `Space`.
 | `Space + g + r`         | Reset Git hunk                |
 | `Space + g + s`         | Stage Git hunk                |
 | `Space + g + u`         | Undo stage Git hunk           |
+| `Space + g + Shift + r` | Reset Git buffer              |
+| `Space + g + Shift + s` | Stage Git buffer              |
 | `Space + g + b`         | Git blame line                |
 | `Space + g + B`         | Toggle Git blame              |
 | `Space + g + d`         | Git diff current file         |
