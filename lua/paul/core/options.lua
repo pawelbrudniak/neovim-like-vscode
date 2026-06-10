@@ -22,4 +22,6 @@ vim.opt.splitbelow = true
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
--- test gitsigns
+-- TODO: review editor options lat
+-- FIXME: example diagnostic marker
+-- BUG to jest BUG

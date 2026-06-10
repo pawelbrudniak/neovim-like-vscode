@@ -108,6 +108,18 @@ Configured formatters:
 - Python: `black`
 - JavaScript / TypeScript / HTML / CSS / JSON / YAML / Markdown: `prettier`
 
+### Diagnostics
+
+- `trouble.nvim`
+- `todo-comments.nvim`
+- Workspace diagnostics panel
+- Document diagnostics panel
+- Quickfix list support
+- Location list support
+- TODO/FIXME highlighting and search
+- TODO/FIXME list through Trouble
+- VS Code-like Problems panel workflow
+
 ### Git
 
 - `gitsigns.nvim`
@@ -124,13 +136,6 @@ Configured formatters:
 - LazyGit integration inside Neovim
 - Git status, diff, stage, commit, push and pull from a terminal UI
 - Quick access to repository changes without leaving the editor
-
-LazyGit keybindings:
-
-| Keybinding              | Action                        |
-| ----------------------- | ----------------------------- |
-| `Space + g + g`         | Open LazyGit                  |
-| `Space + g + Shift + g` | Open LazyGit for current file |
 
 ### Integrated Terminal
 
@@ -205,6 +210,16 @@ The leader key is set to `Space`.
 | `]d`            | Next diagnostic      |
 | `Space + l + f` | Format file          |
 
+### Diagnostics
+
+| Keybinding      | Action                |
+| --------------- | --------------------- |
+| `Space + x + x` | Workspace diagnostics |
+| `Space + x + d` | Document diagnostics  |
+| `Space + x + q` | Quickfix list         |
+| `Space + x + l` | Location list         |
+| `Space + x + t` | TODO/FIXME list       |
+
 ### Git
 
 | Keybinding              | Action                        |
@@ -220,6 +235,13 @@ The leader key is set to `Space`.
 | `Space + g + b`         | Git blame line                |
 | `Space + g + B`         | Toggle Git blame              |
 | `Space + g + d`         | Git diff current file         |
+
+LazyGit keybindings:
+
+| Keybinding              | Action                        |
+| ----------------------- | ----------------------------- |
+| `Space + g + g`         | Open LazyGit                  |
+| `Space + g + Shift + g` | Open LazyGit for current file |
 
 Terminal keybindings:
 
@@ -257,6 +279,8 @@ Terminal keybindings:
 │           ├── telescope.lua
 │           ├── terminal.lua
 │           ├── treesitter.lua
+│           ├── todo-comments.lua
+│           ├── trouble.lua
 │           └── which-key.lua
 └── README.md
 ```

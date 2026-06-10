@@ -41,7 +41,10 @@ return {
 
 				{ "<leader>w", desc = "Save file" },
 				{ "<leader>q", desc = "Quit" },
-				{ "<leader>x", desc = "Close buffer" },
+
+				{ "<leader>b", group = "Buffers" },
+				{ "<leader>bd", desc = "Close current buffer" },
+
 				{ "<leader>g", group = "Git" },
 				{ "<leader>gg", desc = "Open LazyGit" },
 				{ "<leader>gG", desc = "Open LazyGit current file" },
@@ -54,10 +57,18 @@ return {
 				{ "<leader>gb", desc = "Git blame line" },
 				{ "<leader>gB", desc = "Toggle Git blame" },
 				{ "<leader>gd", desc = "Git diff this file" },
+
 				{ "<leader>t", group = "Terminal" },
 				{ "<leader>tt", desc = "Terminal horizontal" },
 				{ "<leader>tf", desc = "Terminal floating" },
 				{ "<leader>tv", desc = "Terminal vertical" },
+
+				{ "<leader>x", group = "Trouble / Diagnostics" },
+				{ "<leader>xx", desc = "Workspace diagnostics" },
+				{ "<leader>xd", desc = "Document diagnostics" },
+				{ "<leader>xq", desc = "Quickfix list" },
+				{ "<leader>xl", desc = "Location list" },
+				{ "<leader>xt", desc = "TODO/FIXME list" },
 			})
 		end,
 	},
