@@ -6,10 +6,10 @@ keymap("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit" })
 keymap("n", "<leader>sv", "<cmd>vsplit<CR>", { desc = "Split vertically" })
 keymap("n", "<leader>sh", "<cmd>split<CR>", { desc = "Split horizontally" })
 
-keymap("n", "<leader>h", "<C-w>h", { desc = "Move to left window" })
-keymap("n", "<leader>j", "<C-w>j", { desc = "Move to lower window" })
-keymap("n", "<leader>k", "<C-w>k", { desc = "Move to upper window" })
-keymap("n", "<leader>l", "<C-w>l", { desc = "Move to right window" })
+keymap("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
+keymap("n", "<C-j>", "<C-w>j", { desc = "Move to lower window" })
+keymap("n", "<C-k>", "<C-w>k", { desc = "Move to upper window" })
+keymap("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
 
 keymap("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
 

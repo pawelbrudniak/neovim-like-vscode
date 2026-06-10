@@ -140,10 +140,10 @@ The leader key is set to `Space`.
 | --------------- | -------------------- |
 | `Space + s + v` | Vertical split       |
 | `Space + s + h` | Horizontal split     |
-| `Space + h`     | Move to left window  |
-| `Space + j`     | Move to lower window |
-| `Space + k`     | Move to upper window |
-| `Space + l`     | Move to right window |
+| `Ctrl + h`      | Move to left window  |
+| `Ctrl + j`      | Move to lower window |
+| `Ctrl + k`      | Move to upper window |
+| `Ctrl + l`      | Move to right window |
 
 ### Buffers
 
