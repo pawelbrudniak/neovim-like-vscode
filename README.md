@@ -95,6 +95,15 @@ Configured formatters:
 - Line blame
 - File diff
 
+### Integrated Terminal
+
+- `toggleterm.nvim`
+- Horizontal terminal
+- Floating terminal
+- Vertical terminal
+- Terminal workflow prepared for Codex CLI usage
+- Quick terminal access without leaving Neovim
+
 ## Keybindings
 
 The leader key is set to `Space`.
@@ -173,6 +182,15 @@ The leader key is set to `Space`.
 | `Space + g + B` | Toggle Git blame      |
 | `Space + g + d` | Git diff current file |
 
+Terminal keybindings:
+
+| Keybinding      | Action                     |
+| --------------- | -------------------------- |
+| `Space + t + t` | Toggle horizontal terminal |
+| `Space + t + f` | Toggle floating terminal   |
+| `Space + t + v` | Toggle vertical terminal   |
+| `Esc`           | Exit terminal mode         |
+
 ## Project Structure
 
 ```text
@@ -196,6 +214,7 @@ The leader key is set to `Space`.
 │           ├── lualine.lua
 │           ├── neo-tree.lua
 │           ├── telescope.lua
+│           ├── terminal.lua
 │           ├── treesitter.lua
 │           └── which-key.lua
 └── README.md
@@ -248,13 +267,27 @@ Then run:
 
 After plugin installation, restart Neovim.
 
+## Repository Safety
+
+This repository contains only Neovim configuration files.
+
+It should not contain:
+
+- API keys
+- access tokens
+- passwords
+- Codex authentication files
+- OpenAI authentication files
+- local `.env` files
+
+A `.gitignore` file is included to reduce the risk of accidentally committing local secrets or credentials.
+
 ## Notes
 
 This configuration is still under active development.
 
 Planned additions:
 
-- integrated terminal workflow
 - debugging support
 - better Markdown support
 - test runner integration
