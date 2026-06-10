@@ -156,7 +156,6 @@ The leader key is set to `Space`.
 | ----------- | ---------------------- |
 | `Space + w` | Save file              |
 | `Space + q` | Quit                   |
-| `Space + x` | Close current buffer   |
 | `Esc`       | Clear search highlight |
 
 ### File Explorer
@@ -189,10 +188,11 @@ The leader key is set to `Space`.
 
 ### Buffers
 
-| Keybinding    | Action          |
-| ------------- | --------------- |
-| `Tab`         | Next buffer     |
-| `Shift + Tab` | Previous buffer |
+| Keybinding        | Action               |
+| ----------------- | -------------------- |
+| `Tab`             | Next buffer          |
+| `Shift + Tab`     | Previous buffer      |
+| `Space + b + d`   | Close current buffer |
 
 ### LSP
 
@@ -309,6 +309,41 @@ sudo pacman -S --needed \
   prettier \
   python-black
 ```
+
+## Health Check / Troubleshooting
+
+Useful Neovim checks:
+
+```vim
+:checkhealth
+:checkhealth vim.lsp
+:checkhealth nvim-treesitter
+:Lazy
+:Mason
+```
+
+Useful system checks:
+
+```bash
+nvim --version
+git --version
+rg --version
+fd --version
+node --version
+npm --version
+lazygit --version
+codex --version
+```
+
+Notes:
+
+- This configuration is currently built and tested on Neovim 0.12.x.
+- nvim-treesitter uses the main branch because older Treesitter configuration styles may be incompatible with Neovim 0.12.x.
+- lualine.nvim uses theme = "auto" to avoid theme loading issues.
+- Node.js and npm are required for several LSP servers and tools managed by Mason.
+- ripgrep and fd are recommended for Telescope.
+- lazygit is required for the LazyGit integration.
+- Codex CLI should be used with ChatGPT login, not an API key, when using a ChatGPT Plus plan.
 
 ## Installation
 
