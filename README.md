@@ -307,6 +307,14 @@ Configured formatters:
 - TODO/FIXME list through Trouble
 - VS Code-like Problems panel workflow
 
+### Markdown
+
+- `render-markdown.nvim`
+- Inline Markdown rendering inside Neovim
+- Better readability for README files and documentation
+- Rendered headings, lists, checkboxes, quotes and code blocks
+- Toggle Markdown rendering with `Space + m + p`
+
 ### Testing
 
 - `neotest.nvim`
@@ -469,6 +477,12 @@ The leader key is set to `Space`.
 | `Space + r + s` | Toggle test summary   |
 | `Space + r + o` | Open test output      |
 
+### Markdown
+
+| Keybinding      | Action                 |
+| --------------- | ---------------------- |
+| `Space + m + p` | Toggle Markdown render |
+
 ### Git
 
 | Keybinding              | Action                        |
@@ -523,6 +537,7 @@ Terminal keybindings:
 │           ├── lsp.lua
 │           ├── lualine.lua
 │           ├── lazygit.lua
+│           ├── markdown.lua
 │           ├── mason-tools.lua
 │           ├── neo-tree.lua
 │           ├── neotest.lua
