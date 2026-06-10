@@ -41,12 +41,12 @@ return {
 
 				{ "<leader>d", desc = "Show diagnostic" },
 
-				{ "<leader>s", group = "Split" },
+				{ "<leader>s", group = "Session / Split" },
 				{ "<leader>sv", desc = "Split vertically" },
 				{ "<leader>sh", desc = "Split horizontally" },
-
-				{ "<leader>w", desc = "Save file" },
-				{ "<leader>q", desc = "Quit" },
+				{ "<leader>ss", desc = "Save session" },
+				{ "<leader>sr", desc = "Restore session" },
+				{ "<leader>sd", desc = "Delete session" },
 
 				{ "<leader>b", group = "Buffers" },
 				{ "<leader>bd", desc = "Close current buffer" },
