@@ -548,6 +548,7 @@ Terminal keybindings:
 │       │   └── lsp.lua
 │       ├── config/
 │       │   └── lazy.lua
+│       │   └── tools.lua
 │       └── plugins/
 │           ├── auto-session.lua
 │           ├── bufferline.lua
