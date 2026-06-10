@@ -332,6 +332,97 @@ Then run:
 
 After plugin installation, restart Neovim.
 
+## Codex CLI Workflow
+
+This configuration is prepared for using Codex CLI directly inside Neovim through the integrated terminal.
+
+Codex is used as a local AI coding agent running in the current project directory. Neovim remains the main editor, while Codex works from the terminal and can analyze, modify and review project files.
+
+Recommended workflow:
+
+1. Open a project in Neovim:
+
+```bash
+cd path/to/project
+nvim .
+```
+
+2. Open the integrated terminal:
+
+```text
+Space + t + f
+```
+
+3. Start Codex:
+
+```bash
+codex
+```
+
+4. Before asking Codex to modify files, make sure the working tree is clean:
+
+```bash
+git status
+```
+
+5. Create a checkpoint commit before larger AI-assisted changes:
+
+```bash
+git add .
+git commit -m "Checkpoint before Codex changes"
+```
+
+6. Ask Codex to make a focused change.
+
+Example prompt:
+
+```text
+Analyze this repository. Fix only the keymap conflict between window navigation and LSP keybindings. Update README.md if needed. Do not change anything else.
+```
+
+7. After Codex finishes, review the changes manually:
+
+```bash
+git status
+git diff
+```
+
+8. Optionally ask Codex to review the current diff:
+
+```text
+/review
+```
+
+9. Commit only after reviewing and accepting the changes:
+
+```bash
+git add .
+git commit -m "Describe the accepted change"
+git push
+```
+
+Useful Codex prompts:
+
+```text
+Analyze this repository. Do not modify files. Summarize the current structure and suggest the next 3 improvements.
+```
+
+```text
+Apply the improvement you suggested. Modify only the necessary files. After editing, summarize exactly what changed.
+```
+
+```text
+Review my current uncommitted changes. Do not modify files. Point out bugs, risks or documentation mismatches.
+```
+
+Safety rules:
+
+- Use ChatGPT login, not an API key, when using Codex with a ChatGPT Plus plan.
+- Do not commit Codex authentication files.
+- Do not commit `.env` files, tokens, API keys or credentials.
+- Always inspect `git diff` before committing AI-generated changes.
+- Prefer small, focused Codex tasks instead of large vague requests.
+
 ## Repository Safety
 
 This repository contains only Neovim configuration files.
