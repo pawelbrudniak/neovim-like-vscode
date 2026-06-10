@@ -29,4 +29,10 @@ keymap("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "Next buffer" })
 keymap("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Previous buffer" })
 keymap("n", "<leader>x", "<cmd>bdelete<CR>", { desc = "Close current buffer" })
 -- =======
-        
+-- Terminal
+keymap("n", "<leader>tt", "<cmd>ToggleTerm direction=horizontal<CR>", { desc = "Toggle terminal horizontal" })
+keymap("n", "<leader>tf", "<cmd>ToggleTerm direction=float<CR>", { desc = "Toggle terminal floating" })
+keymap("n", "<leader>tv", "<cmd>ToggleTerm direction=vertical size=80<CR>", { desc = "Toggle terminal vertical" })
+
+keymap("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
+-- =======

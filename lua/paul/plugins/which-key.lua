@@ -52,6 +52,10 @@ return {
 				{ "<leader>gb", desc = "Git blame line" },
 				{ "<leader>gB", desc = "Toggle Git blame" },
 				{ "<leader>gd", desc = "Git diff this file" },
+				{ "<leader>t", group = "Terminal" },
+				{ "<leader>tt", desc = "Terminal horizontal" },
+				{ "<leader>tf", desc = "Terminal floating" },
+				{ "<leader>tv", desc = "Terminal vertical" },
 			})
 		end,
 	},

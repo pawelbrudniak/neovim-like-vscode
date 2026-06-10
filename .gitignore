@@ -1,0 +1,33 @@
+# Environment files
+.env
+.env.*
+*.env
+
+# Logs
+*.log
+
+# OS/editor trash
+.DS_Store
+Thumbs.db
+
+# Secrets / credentials
+auth.json
+credentials.json
+secrets.json
+token.json
+tokens.json
+*.pem
+*.key
+*.crt
+*.p12
+
+# Local Codex/OpenAI auth directories - should never be committed
+.codex/
+codex/
+.openai/
+openai/
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
