@@ -1,8 +1,5 @@
 local keymap = vim.keymap.set
 
-keymap("n", "<leader>w", "<cmd>w<CR>", { desc = "Save file" })
-keymap("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit" })
-
 keymap("n", "<leader>sv", "<cmd>vsplit<CR>", { desc = "Split vertically" })
 keymap("n", "<leader>sh", "<cmd>split<CR>", { desc = "Split horizontally" })
 
