@@ -12,6 +12,193 @@ This setup is built step by step to keep the configuration readable, maintainabl
 - Use Neovim as a serious editor for development and QA-related work
 - Prepare the environment for working with AI coding agents such as Codex CLI
 
+## Fresh System Installation
+
+This section describes how to install this Neovim configuration on a fresh Arch system.
+
+The goal is to make the setup reproducible: install required system packages, clone the repository, start Neovim, install plugins and verify that everything works.
+
+### 1. Install Neovim and required system packages
+
+On Arch:
+
+```bash
+sudo pacman -S --needed \
+  neovim \
+  git \
+  ripgrep \
+  fd \
+  nodejs \
+  npm \
+  python \
+  python-pip \
+  python-pytest \
+  unzip \
+  curl \
+  base-devel \
+  gcc \
+  tree-sitter-cli \
+  stylua \
+  shfmt \
+  prettier \
+  python-black \
+  lazygit
+```
+
+These packages provide:
+
+- `neovim` — the editor
+- `git` — version control and plugin installation
+- `ripgrep` and `fd` — fast searching for Telescope
+- `nodejs` and `npm` — required by several LSP servers and tools
+- `python`, `python-pip`, `python-pytest` — Python support and test running
+- `base-devel`, `gcc`, `tree-sitter-cli` — build tools and Treesitter support
+- `stylua`, `shfmt`, `prettier`, `python-black` — external formatters
+- `lazygit` — terminal Git UI integrated with Neovim
+
+### 2. Back up existing Neovim configuration
+
+If an existing Neovim configuration is already present, back it up first:
+
+```bash
+mv ~/.config/nvim ~/.config/nvim.bak.$(date +%Y%m%d-%H%M%S)
+```
+
+Optional backup for Neovim data/cache/state:
+
+```bash
+mv ~/.local/share/nvim ~/.local/share/nvim.bak.$(date +%Y%m%d-%H%M%S) 2>/dev/null
+mv ~/.cache/nvim ~/.cache/nvim.bak.$(date +%Y%m%d-%H%M%S) 2>/dev/null
+mv ~/.local/state/nvim ~/.local/state/nvim.bak.$(date +%Y%m%d-%H%M%S) 2>/dev/null
+```
+
+### 3. Clone this repository
+
+Clone the repository into the Neovim configuration directory:
+
+```bash
+git clone git@github.com:pawelbrudniak/neovim-like-vscode.git ~/.config/nvim
+```
+
+If HTTPS is preferred:
+
+```bash
+git clone https://github.com/pawelbrudniak/neovim-like-vscode.git ~/.config/nvim
+```
+
+### 4. Start Neovim
+
+```bash
+nvim
+```
+
+On the first start, `lazy.nvim` should bootstrap itself and install configured plugins.
+
+If plugin installation does not start automatically, run:
+
+```vim
+:Lazy sync
+```
+
+After installation finishes, restart Neovim.
+
+### 5. Install Mason tools
+
+Open Mason:
+
+```vim
+:Mason
+```
+
+The configuration uses Mason and `mason-tool-installer.nvim` to manage LSP servers and external tools.
+
+Expected managed tools include:
+
+- Lua Language Server
+- Bash Language Server
+- JSON LSP
+- YAML Language Server
+- Pyright
+- TypeScript Language Server
+- HTML LSP
+- CSS LSP
+- Stylua
+- Shfmt
+- Black
+- Prettier
+
+If something is missing, run:
+
+```vim
+:MasonToolsInstall
+```
+
+Then restart Neovim.
+
+### 6. Verify the setup
+
+Run these checks inside Neovim:
+
+```vim
+:checkhealth
+:checkhealth vim.lsp
+:checkhealth nvim-treesitter
+:Lazy
+:Mason
+```
+
+### 7. Optional: install and log in to Codex CLI
+
+Codex CLI is used from the integrated terminal inside Neovim.
+
+After installing Codex CLI, verify it with:
+
+```bash
+codex --version
+```
+
+Log in using a ChatGPT account:
+
+```bash
+codex login
+```
+
+When using Codex with a ChatGPT Plus plan, use ChatGPT login instead of an API key.
+
+Inside Neovim, open the floating terminal:
+
+```text
+Space + t + f
+```
+
+Then start Codex:
+
+```bash
+codex
+```
+
+### 8. Recommended first test
+
+Open the Neovim configuration itself:
+
+```bash
+cd ~/.config/nvim
+nvim .
+```
+
+Try the main features:
+
+```text
+Space + e      open file explorer
+Space + f + f  find files
+Space + f + g  search text in project
+Space + x + d  document diagnostics
+Space + g + g  open LazyGit
+Space + t + f  open floating terminal
+```
+
+If these work, the configuration is ready to use.
+
 ## Current Features
 
 ### Core
@@ -120,6 +307,57 @@ Configured formatters:
 - TODO/FIXME list through Trouble
 - VS Code-like Problems panel workflow
 
+### Testing
+
+- `neotest.nvim`
+- `neotest-python`
+- Python test support through `pytest`
+- Run nearest test
+- Run current test file
+- Run all tests in the project
+- Re-run last test
+- Toggle test summary panel
+- Open test output
+
+## Testing Workflow
+
+This setup currently supports Python tests through `pytest`.
+
+Example usage:
+
+```bash
+cd path/to/python/project
+nvim .
+```
+
+Open a test file, then use:
+
+```text
+Space + r + f
+```
+
+to run the current test file, or:
+
+```text
+Space + r + t
+```
+
+to run the nearest test under the cursor.
+
+Use:
+
+```text
+Space + r + s
+```
+
+to toggle the test summary panel and:
+
+```text
+Space + r + o
+```
+
+to open the output of the selected test.
+
 ### Git
 
 - `gitsigns.nvim`
@@ -188,11 +426,11 @@ The leader key is set to `Space`.
 
 ### Buffers
 
-| Keybinding        | Action               |
-| ----------------- | -------------------- |
-| `Tab`             | Next buffer          |
-| `Shift + Tab`     | Previous buffer      |
-| `Space + b + d`   | Close current buffer |
+| Keybinding      | Action               |
+| --------------- | -------------------- |
+| `Tab`           | Next buffer          |
+| `Shift + Tab`   | Previous buffer      |
+| `Space + b + d` | Close current buffer |
 
 ### LSP
 
@@ -219,6 +457,17 @@ The leader key is set to `Space`.
 | `Space + x + q` | Quickfix list         |
 | `Space + x + l` | Location list         |
 | `Space + x + t` | TODO/FIXME list       |
+
+### Testing
+
+| Keybinding      | Action                |
+| --------------- | --------------------- |
+| `Space + r + t` | Run nearest test      |
+| `Space + r + f` | Run current test file |
+| `Space + r + a` | Run all tests         |
+| `Space + r + l` | Run last test         |
+| `Space + r + s` | Toggle test summary   |
+| `Space + r + o` | Open test output      |
 
 ### Git
 
@@ -276,6 +525,7 @@ Terminal keybindings:
 │           ├── lazygit.lua
 │           ├── mason-tools.lua
 │           ├── neo-tree.lua
+│           ├── neotest.lua
 │           ├── telescope.lua
 │           ├── terminal.lua
 │           ├── treesitter.lua

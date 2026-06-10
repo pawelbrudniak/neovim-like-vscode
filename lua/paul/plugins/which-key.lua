@@ -29,6 +29,12 @@ return {
 
 				{ "<leader>r", group = "Refactor" },
 				{ "<leader>rn", desc = "Rename symbol" },
+				{ "<leader>rt", desc = "Run nearest test" },
+				{ "<leader>rf", desc = "Run current test file" },
+				{ "<leader>ra", desc = "Run all tests" },
+				{ "<leader>rl", desc = "Run last test" },
+				{ "<leader>rs", desc = "Toggle test summary" },
+				{ "<leader>ro", desc = "Open test output" },
 
 				{ "<leader>c", group = "Code" },
 				{ "<leader>ca", desc = "Code action" },
