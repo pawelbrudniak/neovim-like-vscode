@@ -26,7 +26,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		keymap("n", "<leader>ca", vim.lsp.buf.code_action, vim.tbl_extend("force", opts, { desc = "Code action" }))
 
 		keymap("n", "<leader>d", vim.diagnostic.open_float, vim.tbl_extend("force", opts, { desc = "Show diagnostic" }))
-		keymap("n", "[d", vim.diagnostic.goto_prev, vim.tbl_extend("force", opts, { desc = "Previous diagnostic" }))
-		keymap("n", "]d", vim.diagnostic.goto_next, vim.tbl_extend("force", opts, { desc = "Next diagnostic" }))
+		keymap("n", "[d", function()
+			vim.diagnostic.jump({ count = -1, float = true })
+		end, vim.tbl_extend("force", opts, { desc = "Previous diagnostic" }))
+		keymap("n", "]d", function()
+			vim.diagnostic.jump({ count = 1, float = true })
+		end, vim.tbl_extend("force", opts, { desc = "Next diagnostic" }))
 	end,
 })

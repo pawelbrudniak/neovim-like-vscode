@@ -42,6 +42,7 @@ sudo pacman -S --needed \
   shfmt \
   prettier \
   python-black \
+  wl-clipboard \
   lazygit
 ```
 
@@ -54,7 +55,10 @@ These packages provide:
 - `python`, `python-pip`, `python-pytest` — Python support and test running
 - `base-devel`, `gcc`, `tree-sitter-cli` — build tools and Treesitter support
 - `stylua`, `shfmt`, `prettier`, `python-black` — external formatters
+- `wl-clipboard` — system clipboard support on Wayland
 - `lazygit` — terminal Git UI integrated with Neovim
+
+This configuration requires Neovim 0.11 or newer.
 
 ### 2. Back up existing Neovim configuration
 
