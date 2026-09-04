@@ -776,4 +776,4 @@ Planned additions:
 
 This repository is part of my personal learning and development workflow. It is designed to help me build a practical, transparent and maintainable Neovim setup instead of relying on a large prebuilt configuration that I do not fully understand.
 
-status: main version
+
