@@ -766,7 +766,7 @@ This configuration is still under active development.
 
 Planned additions:
 
-- debugging support
+
 - better Markdown support
 - test runner integration
 - Codex CLI workflow
